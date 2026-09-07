@@ -662,6 +662,31 @@ body{scroll-behavior:smooth}
 }
 
 </style>
+
+<style id="shuhud-drive-ui-hide">
+/* Hide only the dedicated Google Drive / image-reference intro page. */
+#scenarioView > section.page.a4:first-child{display:none !important;}
+</style>
+
+<style id="uhud-episode-watch-style">
+.episode-watch-view{padding:34px 22px 70px;}
+.episode-watch-shell{width:min(1180px,100%);margin:0 auto;}
+.episode-watch-head{margin:0 0 20px;text-align:right;}
+.episode-watch-kicker{color:#d9b66c;font-size:13px;font-weight:800;margin-bottom:8px;letter-spacing:.02em;}
+.episode-watch-head h2{margin:0 0 8px;font-size:clamp(30px,4vw,48px);line-height:1.15;color:#fff7e9;}
+.episode-watch-head p{margin:0;color:#cfc3b0;line-height:1.8;font-size:14px;}
+.episode-player-card{position:relative;border:1px solid rgba(216,173,91,.24);background:#080604;border-radius:18px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.34);}
+.episode-player-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;}
+.episode-player-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#000;}
+.episode-watch-note{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:14px 17px;border-top:1px solid rgba(255,255,255,.08);color:#a99b86;font-size:12px;}
+.episode-watch-note strong{color:#e5c27c;font-weight:800;}
+@media(max-width:620px){
+  .episode-watch-view{padding:24px 12px 54px;}
+  .episode-player-card{border-radius:12px;}
+  .episode-watch-head h2{font-size:30px;}
+}
+</style>
+
 </head>
 <body><a class="master-home-btn" href="../../index.html" aria-label="العودة إلى الصفحة الرئيسية لشهود الزمن"><span class="master-home-icon">⌂</span><span>شهود الزمن</span></a><div aria-hidden="true" class="character-hover-card" id="characterHoverCard"></div>
 <div class="logo-header">
@@ -677,7 +702,8 @@ body{scroll-behavior:smooth}
 <div class="topbar-wrap">
   <div class="topbar-shell">
     <div class="toolbar nav-cluster">
-      <button class="btn active" id="btnStory" onclick="showView(&#39;story&#39;)">القصة كاملة</button>
+      <button class="btn active" id="btnEpisode" onclick="showView(&#39;episode&#39;)">الحلقة</button>
+      <button class="btn" id="btnStory" onclick="showView(&#39;story&#39;)">القصة كاملة</button>
       <button class="btn" id="btnScenario" onclick="showView(&#39;scenario&#39;)">المشاهد</button>
       <button class="btn" id="btnScript" onclick="showView(&#39;script&#39;)">السكريبت</button>
       <button class="btn" id="btnCharacters" onclick="showView(&#39;characters&#39;)">الشخصيات</button>
@@ -704,7 +730,29 @@ body{scroll-behavior:smooth}
 <div class="pill">عدد العناصر الموثقة: 5</div>
 <div class="pill">المحتوى: القصة كاملة + المشاهد + السكريبت + الشخصيات + البرومبتات + المصادر</div>
 </div>
-<main class="view" id="storyView">
+
+<main class="view episode-watch-view" id="episodeView">
+  <div class="episode-watch-shell">
+    <div class="episode-watch-head">
+      <div class="episode-watch-kicker">غزوة أُحد - شهود الزمن · الحلقة</div>
+      <h2>مشاهدة الحلقة</h2>
+      <p>شاهد حلقة غزوة أُحد مباشرة داخل المنصة.</p>
+    </div>
+    <div class="episode-player-card">
+      <div class="episode-player-frame">
+        <iframe
+          src="https://drive.google.com/file/d/18Q9lt2B-AXbOdOU2tJ---uFdEnp8nXHo/preview"
+          title="حلقة غزوة أُحد — شهود الزمن"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          loading="lazy"></iframe>
+      </div>
+      <div class="episode-watch-note"><strong>غزوة أُحد</strong><span>الموسم الأول · العصر النبوي</span></div>
+    </div>
+  </div>
+</main>
+
+<main class="view hidden" id="storyView">
 <section class="page a4">
 <div class="page-header">
 <div class="kicker">غزوة أُحد - شهود الزمن · القصة الكاملة</div>
@@ -22575,6 +22623,7 @@ function jumpFromSceneIndex(sceneId){
 
 function showView(view) {
   const views = {
+    episode: document.getElementById('episodeView'),
     story: document.getElementById('storyView'),
     scenario: document.getElementById('scenarioView'),
     script: document.getElementById('scriptView'),
@@ -22583,6 +22632,7 @@ function showView(view) {
     sources: document.getElementById('sourcesView')
   };
   const buttons = {
+    episode: document.getElementById('btnEpisode'),
     story: document.getElementById('btnStory'),
     scenario: document.getElementById('btnScenario'),
     script: document.getElementById('btnScript'),
