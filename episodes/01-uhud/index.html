@@ -687,26 +687,6 @@ body{scroll-behavior:smooth}
 }
 </style>
 
-
-<style id="uhud-native-player-fix">
-.episode-player-card{overflow:hidden}
-.episode-player-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(22,16,10,.98),rgba(12,9,6,.98));color:#d7c6ab}
-.episode-player-toolbar .player-title{font-size:12px;font-weight:800;color:#e8d6b7}
-.episode-fullscreen-btn{appearance:none;border:1px solid rgba(216,173,91,.32);background:rgba(216,173,91,.08);color:#f0cc80;border-radius:9px;padding:8px 12px;font:800 12px/1 Tahoma,"Segoe UI",Arial,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:7px;min-height:36px}
-.episode-fullscreen-btn:hover{background:rgba(216,173,91,.14);border-color:rgba(216,173,91,.52)}
-.episode-player-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
-.episode-player-frame video,.episode-player-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#000}
-.episode-player-frame video{object-fit:contain}
-.episode-drive-fallback{display:none}
-.episode-player-error{display:none;position:absolute;inset:0;z-index:3;align-items:center;justify-content:center;text-align:center;padding:24px;background:#090704;color:#e7d8c0;font-size:13px;line-height:1.8}
-.episode-player-error.show{display:flex}
-@media(max-width:620px){
-  .episode-player-toolbar{padding:9px 10px}
-  .episode-fullscreen-btn{padding:8px 10px;font-size:11px}
-  .episode-player-toolbar .player-title{font-size:11px}
-}
-</style>
-
 </head>
 <body><a class="master-home-btn" href="../../index.html" aria-label="العودة إلى الصفحة الرئيسية لشهود الزمن"><span class="master-home-icon">⌂</span><span>شهود الزمن</span></a><div aria-hidden="true" class="character-hover-card" id="characterHoverCard"></div>
 <div class="logo-header">
@@ -757,24 +737,13 @@ body{scroll-behavior:smooth}
       <p>شاهد حلقة غزوة أُحد مباشرة داخل المنصة.</p>
     </div>
     <div class="episode-player-card">
-      <div class="episode-player-toolbar">
-        <span class="player-title">حلقة غزوة أُحد</span>
-        <button class="episode-fullscreen-btn" id="uhudFullscreenBtn" type="button" aria-label="تكبير الفيديو"><span aria-hidden="true">⛶</span><span>تكبير</span></button>
-      </div>
-      <div class="episode-player-frame" id="uhudPlayerFrame">
-        <video id="uhudVideo" controls playsinline preload="metadata">
-          <source src="https://drive.usercontent.google.com/download?id=18Q9lt2B-AXbOdOU2tJ---uFdEnp8nXHo&amp;export=download&amp;confirm=t" type="video/mp4">
-          المتصفح لا يدعم تشغيل الفيديو.
-        </video>
+      <div class="episode-player-frame">
         <iframe
-          class="episode-drive-fallback"
-          id="uhudDriveFallback"
           src="https://drive.google.com/file/d/18Q9lt2B-AXbOdOU2tJ---uFdEnp8nXHo/preview"
           title="حلقة غزوة أُحد — شهود الزمن"
           allow="autoplay; encrypted-media"
           allowfullscreen
           loading="lazy"></iframe>
-        <div class="episode-player-error" id="uhudPlayerError">تعذر تشغيل رابط الفيديو المباشر على هذا المتصفح. تم التحويل تلقائيًا إلى مشغل Google Drive.</div>
       </div>
       <div class="episode-watch-note"><strong>غزوة أُحد</strong><span>الموسم الأول · العصر النبوي</span></div>
     </div>
@@ -23100,41 +23069,5 @@ button[data-target="prompts"],
   else removePromptContent();
 })();
 </script>
-
-<script id="uhud-native-player-script">
-(function(){
-  var video=document.getElementById('uhudVideo');
-  var frame=document.getElementById('uhudPlayerFrame');
-  var fsBtn=document.getElementById('uhudFullscreenBtn');
-  var fallback=document.getElementById('uhudDriveFallback');
-  var errorBox=document.getElementById('uhudPlayerError');
-  var switched=false;
-  function useFallback(){
-    if(switched) return;
-    switched=true;
-    try{video.pause();}catch(e){}
-    video.style.display='none';
-    fallback.style.display='block';
-    errorBox.classList.add('show');
-    setTimeout(function(){errorBox.classList.remove('show');},1800);
-  }
-  if(video){
-    video.addEventListener('error',useFallback);
-    video.addEventListener('stalled',function(){
-      if(video.readyState===0) setTimeout(function(){if(video.readyState===0) useFallback();},2500);
-    });
-  }
-  if(fsBtn){
-    fsBtn.addEventListener('click',function(){
-      if(!switched && video && typeof video.webkitEnterFullscreen==='function'){
-        try{video.webkitEnterFullscreen();return;}catch(e){}
-      }
-      var target=switched?fallback:frame;
-      var req=target.requestFullscreen||target.webkitRequestFullscreen||target.msRequestFullscreen;
-      if(req){try{req.call(target);}catch(e){}}
-    });
-  }
-})();
-</script>
-
+<!-- V19: scenes verified intact -->
 </body></html>
