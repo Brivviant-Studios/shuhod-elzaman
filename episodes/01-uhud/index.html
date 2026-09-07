@@ -701,6 +701,28 @@ body.episode-cinema-open{overflow:hidden!important}
 @media(max-width:620px){.episode-player-toolbar{padding:8px 10px}.episode-cinema-btn{min-height:40px;padding:9px 12px}}
 </style>
 
+
+<style id="uhud-v21-mobile-play-style">
+.episode-mobile-play{display:none;}
+@media(max-width:820px){
+  .episode-player-frame{min-height:210px;}
+  .episode-mobile-play{
+    position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;
+    border:0;background:linear-gradient(to bottom,rgba(0,0,0,.10),rgba(0,0,0,.40));
+    color:#fff;cursor:pointer;font:900 16px/1.2 Tahoma,"Segoe UI",Arial,sans-serif;
+  }
+  .episode-mobile-play span{
+    display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:999px;
+    background:rgba(10,8,5,.82);border:1px solid rgba(216,173,91,.55);color:#f4d38c;
+    box-shadow:0 10px 32px rgba(0,0,0,.35);backdrop-filter:blur(7px);
+  }
+  .episode-player-card.mobile-playing .episode-mobile-play{display:none!important;}
+  .episode-player-card.cinema-mode{height:100vh!important;height:100svh!important;}
+  .episode-player-card.cinema-mode .episode-player-toolbar{display:flex!important;justify-content:flex-start!important;}
+  .episode-player-card.cinema-mode .episode-cinema-btn{font-size:13px;min-height:42px;}
+}
+</style>
+
 </head>
 <body><a class="master-home-btn" href="../../index.html" aria-label="العودة إلى الصفحة الرئيسية لشهود الزمن"><span class="master-home-icon">⌂</span><span>شهود الزمن</span></a><div aria-hidden="true" class="character-hover-card" id="characterHoverCard"></div>
 <div class="logo-header">
@@ -757,6 +779,7 @@ body.episode-cinema-open{overflow:hidden!important}
         <button class="episode-cinema-btn" id="episodeCinemaBtn" type="button" aria-pressed="false">⛶ تكبير الفيديو</button>
       </div>
       <div class="episode-player-frame">
+        <button class="episode-mobile-play" id="episodeMobilePlay" type="button" aria-label="تشغيل الحلقة بالحجم الكامل"><span>▶ تشغيل الحلقة</span></button>
         <iframe
           src="https://drive.google.com/file/d/18Q9lt2B-AXbOdOU2tJ---uFdEnp8nXHo/preview"
           title="حلقة غزوة أُحد — شهود الزمن"
@@ -23115,19 +23138,54 @@ button[data-target="prompts"],
 })();
 </script>
 
-<script id="uhud-v20-player-control">
+<script id="uhud-v21-player-control">
 (function(){
   function init(){
     const card=document.getElementById('episodePlayerCard');
     const btn=document.getElementById('episodeCinemaBtn');
-    if(!card||!btn) return;
+    const mobilePlay=document.getElementById('episodeMobilePlay');
+    const frame=card ? card.querySelector('iframe') : null;
+    if(!card||!btn||!frame) return;
+    const baseSrc='https://drive.google.com/file/d/18Q9lt2B-AXbOdOU2tJ---uFdEnp8nXHo/preview';
+
     function setMode(on){
       card.classList.toggle('cinema-mode',on);
       document.body.classList.toggle('episode-cinema-open',on);
       btn.setAttribute('aria-pressed',on?'true':'false');
-      btn.textContent=on?'✕ إغلاق التكبير':'⛶ تكبير الفيديو';
+      btn.textContent=on?'✕ إغلاق الفيديو':'⛶ تكبير الفيديو';
+      if(!on){
+        card.classList.remove('mobile-playing');
+      }
     }
+
     btn.addEventListener('click',()=>setMode(!card.classList.contains('cinema-mode')));
+
+    if(mobilePlay){
+      mobilePlay.addEventListener('click',function(){
+        const isMobile=window.matchMedia('(max-width:820px)').matches;
+        if(!isMobile) return;
+        card.classList.add('mobile-playing');
+        setMode(true);
+
+        // Reload Drive preview from the user gesture with autoplay requested.
+        const autoplaySrc=baseSrc+'?autoplay=1';
+        if(frame.src!==autoplaySrc) frame.src=autoplaySrc;
+
+        // Prefer native fullscreen when the browser allows it; CSS cinema mode is the iPhone fallback.
+        try{
+          const fs=card.requestFullscreen || card.webkitRequestFullscreen;
+          if(fs) { const r=fs.call(card); if(r&&r.catch) r.catch(()=>{}); }
+        }catch(e){}
+      });
+    }
+
+    function leaveIfNeeded(){
+      if(!document.fullscreenElement && !document.webkitFullscreenElement && card.classList.contains('cinema-mode')){
+        // Keep CSS cinema mode on iPhone; do not close just because native fullscreen is unavailable.
+      }
+    }
+    document.addEventListener('fullscreenchange',leaveIfNeeded);
+    document.addEventListener('webkitfullscreenchange',leaveIfNeeded);
     document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&card.classList.contains('cinema-mode')) setMode(false); });
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
