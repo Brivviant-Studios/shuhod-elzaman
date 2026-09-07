@@ -687,6 +687,20 @@ body{scroll-behavior:smooth}
 }
 </style>
 
+
+<style id="uhud-v20-player-fix">
+.episode-player-toolbar{display:flex;justify-content:flex-start;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08);background:#0b0906;position:relative;z-index:4}
+.episode-cinema-btn{appearance:none;border:1px solid rgba(216,173,91,.32);background:rgba(216,173,91,.10);color:#f0cc80;border-radius:10px;padding:9px 13px;font:800 12px/1.2 inherit;cursor:pointer}
+.episode-cinema-btn:hover{background:rgba(216,173,91,.16)}
+.episode-player-card.cinema-mode{position:fixed!important;inset:0!important;z-index:2147483000!important;border-radius:0!important;border:0!important;background:#000!important;display:flex!important;flex-direction:column!important;margin:0!important;max-width:none!important}
+.episode-player-card.cinema-mode .episode-player-toolbar{flex:0 0 auto;background:#050505;padding-top:max(10px,env(safe-area-inset-top))}
+.episode-player-card.cinema-mode .episode-player-frame{flex:1 1 auto;aspect-ratio:auto!important;min-height:0!important}
+.episode-player-card.cinema-mode .episode-watch-note{display:none!important}
+.episode-player-card.cinema-mode iframe{width:100%!important;height:100%!important}
+body.episode-cinema-open{overflow:hidden!important}
+@media(max-width:620px){.episode-player-toolbar{padding:8px 10px}.episode-cinema-btn{min-height:40px;padding:9px 12px}}
+</style>
+
 </head>
 <body><a class="master-home-btn" href="../../index.html" aria-label="العودة إلى الصفحة الرئيسية لشهود الزمن"><span class="master-home-icon">⌂</span><span>شهود الزمن</span></a><div aria-hidden="true" class="character-hover-card" id="characterHoverCard"></div>
 <div class="logo-header">
@@ -696,6 +710,7 @@ body{scroll-behavior:smooth}
 <header class="hero">
 <div class="hero-inner">
 <h1>غزوة أُحد - شهود الزمن</h1>
+
 </div>
 </header>
 <div class="topbar-wrap">
@@ -727,6 +742,7 @@ body{scroll-behavior:smooth}
 <div class="pill">عدد المشاهد: 37</div>
 <div class="pill">عدد الشخصيات/المجموعات: 15</div>
 <div class="pill">عدد العناصر الموثقة: 5</div>
+<div class="pill">المحتوى: القصة كاملة + المشاهد + السكريبت + الشخصيات + البرومبتات + المصادر</div>
 </div>
 
 <main class="view episode-watch-view" id="episodeView">
@@ -736,14 +752,17 @@ body{scroll-behavior:smooth}
       <h2>مشاهدة الحلقة</h2>
       <p>شاهد حلقة غزوة أُحد مباشرة داخل المنصة.</p>
     </div>
-    <div class="episode-player-card">
+    <div class="episode-player-card" id="episodePlayerCard">
+      <div class="episode-player-toolbar">
+        <button class="episode-cinema-btn" id="episodeCinemaBtn" type="button" aria-pressed="false">⛶ تكبير الفيديو</button>
+      </div>
       <div class="episode-player-frame">
         <iframe
           src="https://drive.google.com/file/d/18Q9lt2B-AXbOdOU2tJ---uFdEnp8nXHo/preview"
           title="حلقة غزوة أُحد — شهود الزمن"
-          allow="autoplay; encrypted-media"
+          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
           allowfullscreen
-          loading="lazy"></iframe>
+          loading="eager"></iframe>
       </div>
       <div class="episode-watch-note"><strong>غزوة أُحد</strong><span>الموسم الأول · العصر النبوي</span></div>
     </div>
@@ -940,6 +959,31 @@ body{scroll-behavior:smooth}
 <div class="page-header">
 <div class="kicker">غزوة أُحد - شهود الزمن · السيناريو</div>
 <div class="page-count">صفحة 1</div>
+</div>
+<article class="intro-card hero-intro">
+<h2>مرجع الصور والمشاهد</h2>
+<p>تم استبدال صفحة الشرح الأولى برابط المجلد مع معاينة كبيرة داخل الصفحة بدل الشكل الصغير السابق.</p>
+<p><a class="drive-link-btn" href="https://drive.google.com/drive/folders/1undFuKXtkEHKXAc7ta2pPyDs9Nj0beid" rel="noopener noreferrer" target="_blank">فتح مجلد Google Drive</a></p>
+</article>
+<article class="intro-card drive-preview-card">
+<h3>معاينة كبيرة للمجلد</h3>
+<p class="drive-preview-note">المعاينة هنا أصبحت كبيرة وواضحة داخل الصفحة. تنقّل الصور صورة بصورة من داخل معاينة Google Drive نفسها. الأسهم يمين/شمال كـ Preview حقيقي تحتاج روابط الصور المباشرة أو إدراج الصور داخل الملف نفسه، لأن مجلد Drive لا يتيح للملف المحلي سحب الصور الفردية تلقائيًا.</p>
+<div class="drive-preview-stage">
+<iframe class="drive-preview-frame" src="https://drive.google.com/embeddedfolderview?id=1undFuKXtkEHKXAc7ta2pPyDs9Nj0beid#grid" title="Google Drive Folder Preview" loading="lazy"></iframe>
+<div class="drive-preview-footer">
+<div class="drive-preview-hint">لو لم تظهر المعاينة بشكل كامل، افتح المجلد من الزر الذهبي بالأعلى.</div>
+<div class="drive-preview-actions">
+<a class="drive-mini-btn" href="https://drive.google.com/drive/folders/1undFuKXtkEHKXAc7ta2pPyDs9Nj0beid" rel="noopener noreferrer" target="_blank">فتح المجلد</a>
+<a class="drive-mini-btn" href="https://drive.google.com/embeddedfolderview?id=1undFuKXtkEHKXAc7ta2pPyDs9Nj0beid#list" rel="noopener noreferrer" target="_blank">فتح كقائمة</a>
+</div>
+</div>
+</div>
+</article>
+</section>
+<section class="page a4">
+<div class="page-header">
+<div class="kicker">غزوة أُحد - شهود الزمن · السيناريو</div>
+<div class="page-count">صفحة 2</div>
 </div><article class="scene-card" data-search-scene="المشهد 1" data-search-title="قرار الانتقام" id="scene-قرار-الانتقام">
 <div class="scene-top">
 <span class="scene-badge">المشهد 1</span>
@@ -1611,12 +1655,6 @@ body{scroll-behavior:smooth}
 <section class="page a4">
 <div class="page-header">
 <div class="kicker">غزوة أُحد - شهود الزمن · السيناريو</div>
-<div class="page-count">صفحة 2</div>
-</div>
-</section>
-<section class="page a4">
-<div class="page-header">
-<div class="kicker">غزوة أُحد - شهود الزمن · السيناريو</div>
 <div class="page-count">صفحة 3</div>
 </div>
 </section>
@@ -1682,8 +1720,14 @@ body{scroll-behavior:smooth}
 </section>
 <section class="page a4">
 <div class="page-header">
-<div class="kicker">غزوة أُحد - شهود الزمن · المشاهد المضافة</div>
+<div class="kicker">غزوة أُحد - شهود الزمن · السيناريو</div>
 <div class="page-count">صفحة 14</div>
+</div>
+</section>
+<section class="page a4">
+<div class="page-header">
+<div class="kicker">غزوة أُحد - شهود الزمن · المشاهد المضافة</div>
+<div class="page-count">صفحة 15</div>
 </div>
 </section>
 </main>
@@ -1691,7 +1735,7 @@ body{scroll-behavior:smooth}
 <section class="page a4">
 <div class="page-header">
 <div class="kicker">غزوة أُحد - شهود الزمن · السكريبت</div>
-<div class="page-count">فويـس أوفر</div>
+<div class="page-count">فويـس أوفر قابل للتعديل</div>
 </div>
 <article class="intro-card">
 <h2>سكريبت الفويس أوفر</h2>
@@ -1724,7 +1768,7 @@ body{scroll-behavior:smooth}
 </div>
 <article class="intro-card">
 <h2>دليل الشخصيات</h2>
-
+<p>وصف دقيق للشخصيات الأساسية والمجموعات المهمة في المشروع، من حيث الملامح والملابس والسلاح والركوب والدور البصري.</p>
 </article>
 </section>
 <section class="page a4">
@@ -2236,7 +2280,7 @@ no identity change</pre><p class="master-note">انسخ هذا البلوك كم
 </div>
 <article class="intro-card">
 <h2>المصادر</h2>
-
+<p>هذا القسم مخصص فقط لمصادر <strong>القصة الكاملة</strong> كما وردت في السرد الرئيسي داخل المشروع، وليس لمراجع البرومبتات أو تفاصيل المشاهد المنفصلة. كلما وُجد أصل قرآني أو حديثي أو سيري أو تاريخي يخدم بناء القصة الكاملة لغزوة أُحد، أُدرج هنا ضمن مرجعيات هذا القسم.</p>
 </article>
 <article class="scene-card hadith-card">
 <div class="scene-top">
@@ -2323,7 +2367,7 @@ no identity change</pre><p class="master-note">انسخ هذا البلوك كم
 <div class="scene-grid">
 <section class="full"><h3>التفسير</h3><p>تفسير الطبري، تفسير ابن كثير، تفسير البغوي، تفسير القرطبي، وأضواء البيان عند الحاجة لربط آيات آل عمران بسياق الوقائع والدروس.</p></section>
 <section><h3>شروح الحديث</h3><p>فتح الباري لابن حجر، شرح النووي على مسلم، وتحفة الأحوذي عند مراجعة الألفاظ والمعاني ومراتب الأخبار المرتبطة بأُحد.</p></section>
-<section><h3>الفائدة</h3><p>التمييز بين النص الثابت، والمعنى المستنبط، والتفصيل السيري الذي يُقبل في السرد ولا يُنسب على أنه لفظ نبوي إلا بدليل واضح.</p></section>
+<section><h3>الفائدة داخل المشروع</h3><p>التمييز بين النص الثابت، والمعنى المستنبط، والتفصيل السيري الذي يُقبل في السرد ولا يُنسب على أنه لفظ نبوي إلا بدليل واضح.</p></section>
 </div>
 </article>
 </section>
@@ -22491,7 +22535,7 @@ Do NOT show only one or two burials.</pre>
 <div class="scene-grid">
 <section class="full"><h3>النص</h3><p>في رواية وحشي: «فرميتُه بحربتي فوقعت فيه».</p></section>
 <section><h3>المصدر</h3><p>صحيح البخاري</p></section>
-<section><h3>ملاحظة</h3><p>هذه العبارة من الروايات الأساسية المرتبطة بمشهد استشهاد حمزة.</p></section>
+<section><h3>ملاحظة</h3><p>هذه العبارة هي الأساس المباشر لبناء مشهد استشهاد حمزة كما في المشروع.</p></section>
 </div>
 </article>
 <article class="scene-card hadith-card" id="dialogue-أنس-بن-النضر">
@@ -22524,6 +22568,7 @@ Do NOT show only one or two burials.</pre>
 <div class="scene-index-list" id="sceneIndexList"></div>
 </div>
 </aside>
+
 </div>
 <script>
 
@@ -23069,5 +23114,24 @@ button[data-target="prompts"],
   else removePromptContent();
 })();
 </script>
-<!-- V19: scenes verified intact -->
+
+<script id="uhud-v20-player-control">
+(function(){
+  function init(){
+    const card=document.getElementById('episodePlayerCard');
+    const btn=document.getElementById('episodeCinemaBtn');
+    if(!card||!btn) return;
+    function setMode(on){
+      card.classList.toggle('cinema-mode',on);
+      document.body.classList.toggle('episode-cinema-open',on);
+      btn.setAttribute('aria-pressed',on?'true':'false');
+      btn.textContent=on?'✕ إغلاق التكبير':'⛶ تكبير الفيديو';
+    }
+    btn.addEventListener('click',()=>setMode(!card.classList.contains('cinema-mode')));
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&card.classList.contains('cinema-mode')) setMode(false); });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+
 </body></html>
