@@ -1,15 +1,16 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>شهود الزمن — الموسم الأول</title>
 <style>
 :root{--bg:#130d08;--bg2:#0b0805;--text:#f7efe2;--muted:#cfbfa5;--gold:#d8ad5b;--gold2:#f0cc80;--line:rgba(255,255,255,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 0,#24180e 0,#130d08 42%,#0b0805 100%);color:var(--text);font-family:Tahoma,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:36px 36px;z-index:0}
 .shell{width:min(1240px,calc(100% - 36px));margin:auto;position:relative;z-index:1}
-.hero-banner{position:relative;min-height:100vh;min-height:100svh;width:100%;overflow:hidden;border-bottom:1px solid var(--line);background-color:#080604;background-image:url('assets/hero-banner.png');background-repeat:no-repeat;background-position:left center;background-size:cover}
+.hero-banner{position:relative;min-height:100vh;min-height:100svh;width:100%;overflow:hidden;border-bottom:1px solid var(--line);background-color:#080604;background-image:url('assets/hero-banner.webp');background-repeat:no-repeat;background-position:left center;background-size:cover}
 .hero-banner:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,6,4,.08) 0%,rgba(8,6,4,.10) 32%,rgba(8,6,4,.32) 54%,rgba(8,6,4,.70) 74%,rgba(8,6,4,.92) 100%);pointer-events:none}
 .hero-banner:after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:linear-gradient(to bottom,rgba(11,8,5,.05) 0%,rgba(11,8,5,.12) 38%,rgba(11,8,5,.74) 78%,#0b0805 100%);pointer-events:none}
 .hero-content{position:absolute;z-index:2;right:clamp(42px,6.5vw,140px);top:50%;transform:translateY(-50%);width:min(620px,38vw);margin:0;padding:0;text-align:right}
@@ -33,7 +34,6 @@ h1{margin:0;font-size:clamp(42px,4.2vw,68px);line-height:1;letter-spacing:-.035e
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:start;flex-direction:column}.count{white-space:normal}.era-header:after{font-size:72px}.hero-banner{min-height:100vh;min-height:100svh;background-size:cover;background-position:28% center}.hero-banner:before{background:linear-gradient(90deg,rgba(8,6,4,.18),rgba(8,6,4,.54) 44%,rgba(8,6,4,.90) 100%)}.hero-content{right:5vw;width:min(560px,72vw)}}
 @media(max-width:610px){.shell{width:min(100% - 22px,1240px)}.grid{grid-template-columns:1fr}.episode-card{min-height:290px}.era-header{padding:24px 20px}.era-header h2{font-size:42px}.era-header:after{font-size:60px;left:14px}.hero-banner{min-height:100vh;min-height:100svh;background-size:cover;background-position:32% center}.hero-banner:before{background:linear-gradient(to bottom,rgba(8,6,4,.24),rgba(8,6,4,.62) 42%,rgba(8,6,4,.94) 100%)}.hero-content{right:22px;left:22px;top:auto;bottom:68px;transform:none;width:auto}.eyebrow{font-size:11px}.description{font-size:14px;line-height:1.8}.season-structure span{font-size:11px}}
 </style>
-
 <style id="landing-screen-fix">
 .hero-banner{isolation:isolate}
 .hero-banner .landing-cue{position:absolute;z-index:3;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;color:rgba(240,204,128,.72);font-size:11px;letter-spacing:.04em;pointer-events:none}
@@ -41,7 +41,6 @@ h1{margin:0;font-size:clamp(42px,4.2vw,68px);line-height:1;letter-spacing:-.035e
 @keyframes landingCue{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(5px);opacity:1}}
 @media(max-width:610px){.hero-banner .landing-cue{bottom:16px}}
 </style>
-
 <style id="mobile-hero-left-focus-fix">
 @media(max-width:610px){
   .hero-banner{
@@ -79,176 +78,184 @@ h1{margin:0;font-size:clamp(42px,4.2vw,68px);line-height:1;letter-spacing:-.035e
 </head>
 <body>
 <main>
-<section class="hero-banner" aria-label="شهود الزمن — الموسم الأول">
-  <div class="hero-content">
-    <div class="eyebrow">شهود الزمن — الموسم الأول</div>
-    <h1>الموسم الأول</h1>
-    <div class="tagline">لكل زمنٍ قصة… ولكل قصةٍ شاهد.</div>
-    <p class="description">«شهود الزمن» رحلة واحدة عبر التاريخ. كل حلقة تحكي قصة مستقلة من عصر مختلف، لتنتقل الرحلة من العصر النبوي عبر العصور المتعاقبة وصولًا إلى العصر الحديث.</p>
-    <div class="season-structure"><span>15 حلقة — العصر النبوي</span><i>—</i><span>15 حلقة — عصر الخلفاء الراشدين</span></div>
-    <a class="start" href="#episodes"><span>ابدأ الرحلة</span><b>←</b></a>
-  </div>
-  <div class="landing-cue">تابع الحلقات</div>
+<section aria-label="شهود الزمن — الموسم الأول" class="hero-banner">
+<div class="hero-content">
+<div class="eyebrow">شهود الزمن — الموسم الأول</div>
+<h1>الموسم الأول</h1>
+<div class="tagline">لكل زمنٍ قصة… ولكل قصةٍ شاهد.</div>
+<p class="description">«شهود الزمن» رحلة واحدة عبر التاريخ. كل حلقة تحكي قصة مستقلة من عصر مختلف، لتنتقل الرحلة من العصر النبوي عبر العصور المتعاقبة وصولًا إلى العصر الحديث.</p>
+<div class="season-structure"><span>7 حلقات — العهد النبوي</span><i>—</i><span>4 حلقات — عهد أبي بكر</span><i>—</i><span>11 حلقة — عهد عمر</span><i>—</i><span>8 حلقات — عهد عثمان</span></div>
+<a class="start" href="#episodes"><span>ابدأ الرحلة</span><b>←</b></a>
+</div>
+<div class="landing-cue">تابع الحلقات</div>
 </section>
 <section class="library" id="episodes"><div class="shell">
-<div class="section-head"><div><h2>حلقات الموسم الأول</h2><p>30 حلقة مقسمة بوضوح إلى عصرين، مع إمكانية إضافة باقي الأغلفة والأسماء لاحقًا.</p></div><div class="count"><strong>30</strong> حلقة</div></div>
+<div class="section-head"><div><h2>حلقات الموسم الأول</h2><p>30 حلقة موزعة بوضوح على أربعة عهود، من العهد النبوي إلى عهد عثمان بن عفان.</p></div><div class="count"><strong>30</strong> حلقة</div></div>
 <section class="era-section">
-<div class="era-header" data-index="01"><div class="era-kicker">القسم الأول · 15 حلقة</div><h2>العصر النبوي</h2><p>الحلقات 01–15 من الموسم الأول</p></div>
-<div class="grid"><a class="episode-card available" href="episodes/01-uhud/index.html" aria-label="فتح الحلقة 01: غزوة أُحد">
-      <div class="episode-art" style="--episode-image:url('assets/cover-01-uhud.png')"></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">01</span><span class="status">متاح الآن</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>غزوة أُحد</h3><span class="open-label">دخول الحلقة <b>←</b></span></div>
-    </a><a class="episode-card available" href="episodes/02-khaibar/index.html" aria-label="فتح الحلقة 02: غزوة خيبر">
-      <div class="episode-art" style="--episode-image:url('assets/cover-02-khaibar.png')"></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">02</span><span class="status">متاح الآن</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>غزوة خيبر</h3><span class="open-label">دخول الحلقة <b>←</b></span></div>
-    </a><a class="episode-card available" href="episodes/03-khanduq/index.html" aria-label="فتح الحلقة 03: غزوة الخندق">
-      <div class="episode-art" style="--episode-image:url('assets/cover-03-khanduq.png')"></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">03</span><span class="status">متاح الآن</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>غزوة الخندق</h3><span class="open-label">دخول الحلقة <b>←</b></span></div>
-    </a><article class="episode-card locked" aria-label="الحلقة 04 قيد الإعداد">
-      <div class="placeholder-art"><span>04</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">04</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 04</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 05 قيد الإعداد">
-      <div class="placeholder-art"><span>05</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">05</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 05</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 06 قيد الإعداد">
-      <div class="placeholder-art"><span>06</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">06</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 06</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 07 قيد الإعداد">
-      <div class="placeholder-art"><span>07</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">07</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 07</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 08 قيد الإعداد">
-      <div class="placeholder-art"><span>08</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">08</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 08</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 09 قيد الإعداد">
-      <div class="placeholder-art"><span>09</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">09</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 09</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 10 قيد الإعداد">
-      <div class="placeholder-art"><span>10</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">10</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 10</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 11 قيد الإعداد">
-      <div class="placeholder-art"><span>11</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">11</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 11</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 12 قيد الإعداد">
-      <div class="placeholder-art"><span>12</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">12</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 12</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 13 قيد الإعداد">
-      <div class="placeholder-art"><span>13</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">13</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 13</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 14 قيد الإعداد">
-      <div class="placeholder-art"><span>14</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">14</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 14</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 15 قيد الإعداد">
-      <div class="placeholder-art"><span>15</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">15</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">العصر النبوي</span><h3>الحلقة 15</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article></div>
+<div class="era-header" data-index="01"><div class="era-kicker">القسم الأول · 7 حلقات</div><h2>العهد النبوي</h2><p>الحلقات 01–07 من الموسم الأول</p></div>
+<div class="grid"><article aria-label="الحلقة 01: بدر: يوم الفرقان — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep01.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">01</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">العهد النبوي</span><h3>بدر: يوم الفرقان</h3><span class="open-label disabled">قريبًا</span></div>
+</article><a aria-label="فتح الحلقة 02: أحد: الزلزال" class="episode-card available" href="episodes/01-uhud/index.html">
+
+<div class="episode-art" style="--episode-image:url('assets/ep02.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">02</span><span class="status">متاح الآن</span></div>
+<div class="episode-body"><span class="era">العهد النبوي</span><h3>أحد: الزلزال</h3><span class="open-label">دخول الحلقة <b>←</b></span></div>
+</a><a aria-label="فتح الحلقة 03: الخندق: صدمة الأحزاب" class="episode-card available" href="episodes/03-khanduq/index.html">
+
+<div class="episode-art" style="--episode-image:url('assets/ep03.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">03</span><span class="status">متاح الآن</span></div>
+<div class="episode-body"><span class="era">العهد النبوي</span><h3>الخندق: صدمة الأحزاب</h3><span class="open-label">دخول الحلقة <b>←</b></span></div>
+</a><article aria-label="الحلقة 04: مؤتة: الراية المنصوبة — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep04.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">04</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">العهد النبوي</span><h3>مؤتة: الراية المنصوبة</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 05: فتح مكة: عفو الملوك — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep05.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">05</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">العهد النبوي</span><h3>فتح مكة: عفو الملوك</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 06: حنين: اختبار القلوب — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep06.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">06</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">العهد النبوي</span><h3>حنين: اختبار القلوب</h3><span class="open-label disabled">قريبًا</span></div>
+</article><a aria-label="فتح الحلقة 07: خيبر: كسر الحصون" class="episode-card available" href="episodes/02-khaibar/index.html">
+
+<div class="episode-art" style="--episode-image:url('assets/ep07.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">07</span><span class="status">متاح الآن</span></div>
+<div class="episode-body"><span class="era">العهد النبوي</span><h3>خيبر: كسر الحصون</h3><span class="open-label">دخول الحلقة <b>←</b></span></div>
+</a></div>
 </section>
 <section class="era-section">
-<div class="era-header" data-index="02"><div class="era-kicker">القسم الثاني · 15 حلقة</div><h2>عصر الخلفاء الراشدين</h2><p>الحلقات 16–30 من الموسم الأول</p></div>
-<div class="grid"><article class="episode-card locked" aria-label="الحلقة 16 قيد الإعداد">
-      <div class="placeholder-art"><span>16</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">16</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 16</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 17 قيد الإعداد">
-      <div class="placeholder-art"><span>17</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">17</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 17</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 18 قيد الإعداد">
-      <div class="placeholder-art"><span>18</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">18</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 18</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 19 قيد الإعداد">
-      <div class="placeholder-art"><span>19</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">19</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 19</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 20 قيد الإعداد">
-      <div class="placeholder-art"><span>20</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">20</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 20</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 21 قيد الإعداد">
-      <div class="placeholder-art"><span>21</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">21</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 21</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 22 قيد الإعداد">
-      <div class="placeholder-art"><span>22</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">22</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 22</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 23 قيد الإعداد">
-      <div class="placeholder-art"><span>23</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">23</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 23</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 24 قيد الإعداد">
-      <div class="placeholder-art"><span>24</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">24</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 24</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 25 قيد الإعداد">
-      <div class="placeholder-art"><span>25</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">25</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 25</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 26 قيد الإعداد">
-      <div class="placeholder-art"><span>26</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">26</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 26</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 27 قيد الإعداد">
-      <div class="placeholder-art"><span>27</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">27</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 27</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 28 قيد الإعداد">
-      <div class="placeholder-art"><span>28</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">28</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 28</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 29 قيد الإعداد">
-      <div class="placeholder-art"><span>29</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">29</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 29</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article><article class="episode-card locked" aria-label="الحلقة 30 قيد الإعداد">
-      <div class="placeholder-art"><span>30</span></div>
-      <div class="episode-overlay"></div>
-      <div class="episode-top"><span class="episode-number">30</span><span class="status muted-status">قريبًا</span></div>
-      <div class="episode-body"><span class="era">عصر الخلفاء الراشدين</span><h3>الحلقة 30</h3><span class="open-label disabled">اسم الحلقة سيُضاف لاحقًا</span></div>
-    </article></div>
+<div class="era-header" data-index="02"><div class="era-kicker">القسم الثاني · 4 حلقات</div><h2>عهد أبي بكر الصديق</h2><p>الحلقات 08–11 من الموسم الأول</p></div>
+<div class="grid"><article aria-label="الحلقة 08: اليمامة: حديقة الموت — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep08.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">08</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد أبي بكر الصديق</span><h3>اليمامة: حديقة الموت</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 09: ذات السلاسل: الصدام الأول — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep09.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">09</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد أبي بكر الصديق</span><h3>ذات السلاسل: الصدام الأول</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 10: أليس: نهر الدم — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep10.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">10</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد أبي بكر الصديق</span><h3>أليس: نهر الدم</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 11: الفِرَاض: تحالف الجحيم — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep11.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">11</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد أبي بكر الصديق</span><h3>الفِرَاض: تحالف الجحيم</h3><span class="open-label disabled">قريبًا</span></div>
+</article></div>
+</section>
+<section class="era-section">
+<div class="era-header" data-index="03"><div class="era-kicker">القسم الثالث · 11 حلقة</div><h2>عهد عمر بن الخطاب</h2><p>الحلقات 12–22 من الموسم الأول</p></div>
+<div class="grid"><article aria-label="الحلقة 12: أجنادين: كسر الهيبة — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep12.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">12</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>أجنادين: كسر الهيبة</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 13: اليرموك: زلزال روما — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep13.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">13</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>اليرموك: زلزال روما</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 14: فتح دمشق: سقوط الأسوار — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep14.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">14</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>فتح دمشق: سقوط الأسوار</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 15: الجسر: غدر الأعاجم — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep15.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">15</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>الجسر: غدر الأعاجم</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 16: القادسية: ليلة الهرير — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep16.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">16</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>القادسية: ليلة الهرير</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 17: مدائن كسرى: سقوط الإيوان — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep17.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">17</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>مدائن كسرى: سقوط الإيوان</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 18: جلولاء: مطاردة الذئاب — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep18.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">18</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>جلولاء: مطاردة الذئاب</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 19: نهاوند: فتح الفتوح — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep19.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">19</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>نهاوند: فتح الفتوح</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 20: فتح مصر: دهاء الوادي — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep20.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">20</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>فتح مصر: دهاء الوادي</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 21: قيسارية: الساحل الأخير — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep21.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">21</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>قيسارية: الساحل الأخير</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 22: تستر: صيد الهرمزان — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep22.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">22</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عمر بن الخطاب</span><h3>تستر: صيد الهرمزان</h3><span class="open-label disabled">قريبًا</span></div>
+</article></div>
+</section>
+<section class="era-section">
+<div class="era-header" data-index="04"><div class="era-kicker">القسم الرابع · 8 حلقات</div><h2>عهد عثمان بن عفان</h2><p>الحلقات 23–30 من الموسم الأول</p></div>
+<div class="grid"><article aria-label="الحلقة 23: ذات الصواري: عرش البحار — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep23.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">23</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عثمان بن عفان</span><h3>ذات الصواري: عرش البحار</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 24: إفريقية: طوفان القارة — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep24.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">24</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عثمان بن عفان</span><h3>إفريقية: طوفان القارة</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 25: قبرص: سيد البحار — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep25.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">25</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عثمان بن عفان</span><h3>قبرص: سيد البحار</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 26: الإصطخر: العصيان الأخير — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep26.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">26</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عثمان بن عفان</span><h3>الإصطخر: العصيان الأخير</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 27: خراسان: تخوم الشرق — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep27.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">27</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عثمان بن عفان</span><h3>خراسان: تخوم الشرق</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 28: القوقاز: حرب الثلوج — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep28.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">28</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عثمان بن عفان</span><h3>القوقاز: حرب الثلوج</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 29: طبرستان: جبال الموت — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep29.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">29</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عثمان بن عفان</span><h3>طبرستان: جبال الموت</h3><span class="open-label disabled">قريبًا</span></div>
+</article><article aria-label="الحلقة 30: تأمين الثغور: الدرع الأخير — قريبًا" class="episode-card locked">
+
+<div class="episode-art" style="--episode-image:url('assets/ep30.webp')"></div><div class="episode-overlay"></div>
+<div class="episode-top"><span class="episode-number">30</span><span class="status muted-status">قريبًا</span></div>
+<div class="episode-body"><span class="era">عهد عثمان بن عفان</span><h3>تأمين الثغور: الدرع الأخير</h3><span class="open-label disabled">قريبًا</span></div>
+</article></div>
 </section>
 </div></section>
 </main>
